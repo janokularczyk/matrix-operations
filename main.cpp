@@ -1,24 +1,39 @@
 #include <iostream>
 using namespace std;
 
+void tworzenieMacierzy3x3(float macierz[3][3]) {
+    int temp;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> temp;
+            macierz[i][j] = temp;
+        }
+    }
+}
+
+void drukowanieMacierzy3x3(float macierz[3][3]) {
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << macierz[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main() {
 
     bool flaga = true;
     while(flaga) {
-        int liczbaKolumn1 = 0;
-        int liczbaWierszy1 = 0;
-        int liczbaKolumn2 = 0;
-        int liczbaWierszy2 = 0;
+        float macierz1[3][3];
+        float macierz2[3][3];
 
-        cout << "\nWprowadz liczbe kolumn 1 macierzy: " << endl;
-        cin >> liczbaKolumn1;
-        cout << "Wporwadz liczbe wierszy 1 macierzy: " << endl;
-        cin >> liczbaWierszy1;
+        cout << "Wprowadź wyrazy macierzy 1:\n";
+        tworzenieMacierzy3x3(macierz1);
 
-        cout << "\nWprowadz liczbe kolumn 2 macierzy: " << endl;
-        cin >> liczbaKolumn2;
-        cout << "Wporwadz liczbe wierszy 2 macierzy: " << endl;
-        cin >> liczbaWierszy2;
+        cout << "Wprowadź wyrazy macierzy 2:\n";
+        tworzenieMacierzy3x3(macierz2);
 
         bool flagaOperacji = true;
         while(flagaOperacji) {
@@ -34,7 +49,10 @@ int main() {
 
             switch(wyborOperacji) {
                 case 1: 
-                    cout << "drukowanie..." << endl;
+                    cout << "MACIERZ_1:" << endl;
+                    drukowanieMacierzy3x3(macierz1);
+                    cout << "\nMACIERZ_2:" << endl;
+                    drukowanieMacierzy3x3(macierz2);
                     break;
                 case 2:
                     cout << "dodawanie..." << endl;
