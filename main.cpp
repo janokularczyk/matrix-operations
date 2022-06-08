@@ -12,8 +12,8 @@ void wyswietlMenu() {
 
 void tworzenieMacierzy3x3(float macierz[3][3]) {
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
             cin >> macierz[i][j];
         }
     }
@@ -21,8 +21,8 @@ void tworzenieMacierzy3x3(float macierz[3][3]) {
 
 void drukowanieMacierzy3x3(float macierz[3][3]) {
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
             cout << macierz[i][j] << " ";
         }
         cout << endl;
@@ -31,10 +31,32 @@ void drukowanieMacierzy3x3(float macierz[3][3]) {
 
 void dodawanieMacierzy(float a[3][3], float b[3][3]) {
 
+    float c[3][3];
+
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    drukowanieMacierzy3x3(c);
 }
 
 void mnozenieMacierzy(float a[3][3], float b[3][3]) {
 
+    float c[3][3];
+
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            int temp = 0;
+            for(int k = 0; k < 3; ++k) {
+                temp += a[i][k] * b[k][j];
+            } 
+            c[i][j] = temp;  
+        }
+    }
+
+    drukowanieMacierzy3x3(c);
 }
 
 void mnozenieMacierzyPrzezWektor() {
