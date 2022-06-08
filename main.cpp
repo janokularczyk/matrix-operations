@@ -2,6 +2,7 @@
 using namespace std;
 
 void tworzenieMacierzy3x3(float macierz[3][3]) {
+    
     int temp;
 
     for (int i = 0; i < 3; i++) {
@@ -20,6 +21,14 @@ void drukowanieMacierzy3x3(float macierz[3][3]) {
         }
         cout << endl;
     }
+}
+
+void dodawanieMacierzy() {
+
+}
+
+void mnozenieMacierzy() {
+
 }
 
 int main() {
