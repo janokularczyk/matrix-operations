@@ -33,13 +33,13 @@ void dodawanieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
     float macierzC[3][3];
 
-    cout << "WYNIK:" << endl;
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             macierzC[i][j] = macierzA[i][j] + macierzB[i][j];
         }
     }
 
+    cout << "WYNIK:" << endl;
     drukowanieMacierzy3x3(macierzC);
 }
 
@@ -47,7 +47,6 @@ void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
     float macierzC[3][3];
 
-    cout << "WYNIK:" << endl;
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             int temp = 0;
@@ -58,6 +57,7 @@ void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
         }
     }
 
+    cout << "WYNIK:" << endl;
     drukowanieMacierzy3x3(macierzC);
 }
 
@@ -82,9 +82,7 @@ void mnozenieMacierzyPrzezWektor(float macierz[3][3]) {
     cout <<"\nWYNIK:" << endl;
     for(int i = 0; i < 3; i++) {
         cout << wynik[i] << endl;
-    }
-    cout << endl;
-    
+    }   
 }
 
 int main() {
@@ -124,6 +122,7 @@ int main() {
                     break;
                 case 4:
                     mnozenieMacierzyPrzezWektor(macierz1);
+                    cout << endl;
                     mnozenieMacierzyPrzezWektor(macierz2);
                     break;
                 case 5:
