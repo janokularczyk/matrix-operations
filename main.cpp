@@ -33,6 +33,7 @@ void dodawanieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
     float macierzC[3][3];
 
+    cout << "WYNIK:" << endl;
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             macierzC[i][j] = macierzA[i][j] + macierzB[i][j];
@@ -46,6 +47,7 @@ void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
     float macierzC[3][3];
 
+    cout << "WYNIK:" << endl;
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             int temp = 0;
@@ -59,8 +61,30 @@ void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
     drukowanieMacierzy3x3(macierzC);
 }
 
-void mnozenieMacierzyPrzezWektor() {
+void mnozenieMacierzyPrzezWektor(float macierz[3][3]) {
 
+    float wektor[3];
+    float wynik[3];
+
+    cout << "Wprowadz wyrazy wektora:" << endl;
+    for(int i = 0; i < 3; i++) {
+        cin >> wektor[i];
+    }
+
+    for(int i = 0; i < 3; i++) {
+        int temp = 0;
+        for(int j = 0; j < 3; j++) {
+            temp += wektor[j] * macierz[i][j];
+        }
+        wynik[i] = temp;
+    }
+
+    cout <<"\nWYNIK:" << endl;
+    for(int i = 0; i < 3; i++) {
+        cout << wynik[i] << endl;
+    }
+    cout << endl;
+    
 }
 
 int main() {
@@ -71,10 +95,10 @@ int main() {
         float macierz1[3][3];
         float macierz2[3][3];
 
-        cout << "Wprowadź wyrazy macierzy 1:\n";
+        cout << "Wprowadź wyrazy macierzy 1:" << endl;
         tworzenieMacierzy3x3(macierz1);
 
-        cout << "Wprowadź wyrazy macierzy 2:\n";
+        cout << "Wprowadź wyrazy macierzy 2:" << endl;
         tworzenieMacierzy3x3(macierz2);
 
         bool flagaOperacji = true;
@@ -93,18 +117,14 @@ int main() {
                     drukowanieMacierzy3x3(macierz2);
                     break;
                 case 2:
-                    cout << "WYNIK:" << endl;
                     dodawanieMacierzy(macierz1, macierz2);
                     break;
                 case 3:
-                    cout << "WYNIK:" << endl;
                     mnozenieMacierzy(macierz1, macierz2);
                     break;
                 case 4:
-                    cout << "WYNIK MACIERZ_1:" << endl;
-                    mnozenieMacierzyPrzezWektor();
-                    cout << "WYNIK MACIERZ_2:" << endl;
-                    mnozenieMacierzyPrzezWektor();
+                    mnozenieMacierzyPrzezWektor(macierz1);
+                    mnozenieMacierzyPrzezWektor(macierz2);
                     break;
                 case 5:
                     flagaOperacji = false;
