@@ -29,30 +29,30 @@ void drukowanieMacierzy3x3(float macierz[3][3]) {
     }
 }
 
-void dodawanieMacierzy(float a[3][3], float b[3][3]) {
+void dodawanieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
-    float c[3][3];
+    float macierzC[3][3];
 
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
-            c[i][j] = a[i][j] + b[i][j];
+            macierzC[i][j] = macierzA[i][j] + macierzB[i][j];
         }
     }
 
-    drukowanieMacierzy3x3(c);
+    drukowanieMacierzy3x3(macierzC);
 }
 
-void mnozenieMacierzy(float a[3][3], float b[3][3]) {
+void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
 
-    float c[3][3];
+    float macierzC[3][3];
 
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
             int temp = 0;
             for(int k = 0; k < 3; ++k) {
-                temp += a[i][k] * b[k][j];
+                temp += macierzA[i][k] * macierzB[k][j];
             } 
-            c[i][j] = temp;  
+            macierzC[i][j] = temp;  
         }
     }
 
