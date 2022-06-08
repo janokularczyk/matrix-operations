@@ -56,7 +56,7 @@ void mnozenieMacierzy(float macierzA[3][3], float macierzB[3][3]) {
         }
     }
 
-    drukowanieMacierzy3x3(c);
+    drukowanieMacierzy3x3(macierzC);
 }
 
 void mnozenieMacierzyPrzezWektor() {
